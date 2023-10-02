@@ -78,12 +78,124 @@
     background-color: #f9aec7;
 }
 
+.pokemodal{
+    display: none;
+    position: relative;
+    width: 350px;
+    height: 650px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modalcabecalho{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 59%;
+}
+
+.modalcorpo {
+    border-color: #000;
+    border-radius: 15px;
+    height: 59%; /* Defina a altura desejada */
+    background-color: red;
+    margin-top: -30px;
+}
+
+.corpoCabecalho {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 80px; 
+    background-color: rgb(85, 88, 88);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.corpoCabecalho span {
+    margin-left: 20px; 
+    text-align: center;
+    color: gray;
+}
+
+.bodycorpo {
+  
+    height: 200px; 
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+.bodycorpo span {
+    margin-left: 20px; 
+    text-align: left;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.imagemmodal {
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 100%;
+    height: 225px;
+}
+
+
+.close-button {
+    position: absolute;
+    bottom: 89%;
+    left: 10%;
+    margin-right: 0; 
+    cursor: pointer;
+    
+}
+
+.modalnome{
+    text-transform: capitalize;
+    color: white;
+    position: absolute;
+    bottom: 76%;
+    left: 10%;
+    font-size: 37px;
+
+}
+
+.modalNum{
+    color: white; 
+    position: absolute;
+    left: 85%;
+    bottom: 77%;
+    font-size: 17px;
+}
+
+.modalcabecalho>div>span{
+    position: absolute;
+    left: 13%;
+    bottom: 75%;
+    color: #fff;
+    padding: .25rem .5rem;
+    margin: .25rem 0;
+    font-size: 1.1rem;
+   
+    filter: brightness(1.3);
+}
+
+
+
 .pokemon {
     display: flex;
     flex-direction: column;
     margin: .5rem;
     padding: 1rem;
     border-radius: 1rem;
+    z-index: 1
 }
 
 .pokemon .number {
@@ -150,6 +262,8 @@
     .pokemons {
         grid-template-columns: 1fr 1fr;
     }
+
+    
 }
 
 @media screen and (min-width: 576px) {
