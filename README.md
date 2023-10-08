@@ -24,11 +24,9 @@ Javascript, HTML, CSS, node.js e introdução a utilziação de API via Javascri
 Esta é a versão atual do projeto, mas a ideia é sempre melhorando e atualizando
 ## Imagens do Projeto atual
 
-![Listagem da Pokedex](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Listagem da Pokedex](assets/.idea/pokedex.jpeg)
 
-![Card Pokemon](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
-
+![Card Pokemon](assets/.idea/card_pokemon.jpeg)
 
 
 
@@ -37,4 +35,4 @@ Esta é a versão atual do projeto, mas a ideia é sempre melhorando e atualizan
 A ideia base para realizar o projeto
  - [dribbble](https://dribbble.com/shots/6540871-Pokedex-App)
 
-![Card Pokemon Original](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Card Pokemon Original](assets/.idea/Ideia_base.jpeg)
