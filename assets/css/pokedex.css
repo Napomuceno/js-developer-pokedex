@@ -81,8 +81,8 @@
 .pokemodal{
     display: none;
     position: relative;
-    width: 350px;
-    height: 650px;
+    width: 360px;
+    height: 670px;
     margin: 0 auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -96,45 +96,134 @@
 .modalcorpo {
     border-color: #000;
     border-radius: 15px;
-    height: 59%; /* Defina a altura desejada */
-    background-color: red;
+    height: 61%;
+    background-color: #ffffff;
     margin-top: -30px;
+    border-bottom: 2px solid #000;
+    z-index: 1;
 }
 
 .corpoCabecalho {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     height: 80px; 
-    background-color: rgb(85, 88, 88);
     display: flex;
     align-items: center;
     justify-content: center;
 
 }
 
+
 .corpoCabecalho span {
     margin-left: 20px; 
     text-align: center;
-    color: gray;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    font-weight: 700;
 }
 
-.bodycorpo {
-  
-    height: 200px; 
-    background-color: white;
+
+
+.bodycorpocabecalho{
+    border-color: #000;
+    height: 180px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.BccColunaEsquerda,
+.BccColunaCentro,
+.BccColunaDireita {
+  height: 120px;
+  width: 90px;
+  margin-top: 2%;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start; 
+
+}
+.BccColunaEsquerda{
+    margin-left: 7%;
     display: flex;
     flex-direction: column;
+}
 
+.bbdescricao{
+    margin-top: 20px;
+}
+
+.BccColunaCentro, 
+.ccinfPokemon {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.ccinfPokemon{
+    margin-top: 20px;
+    text-transform: capitalize;
+}
+
+.rodapeinferior{
+    height: 110px;
+    display: flex;
+    justify-content: space-between;
+   
 }
 
 
 
-.bodycorpo span {
-    margin-left: 20px; 
-    text-align: left;
-    color: gray;
-    margin-bottom: 10px;
+.inferiorolunaEsquerda,
+.inferiorColunaCenter,
+.inferiorColunaDireitar {
+  height: 120px;
+  width: 100px;
+  margin-top: 2%;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start; 
+
 }
+
+.inferiorolunaEsquerda{
+    margin-left: 7%;
+    display: flex;
+    flex-direction: column;
+}
+
+.rodapeinferior_Titulo{
+    font-size: 20px;
+    font-weight: 700;
+
+}
+.descricao_inferior{
+    margin-top: 17px;
+}
+
+
+.inferiorColunaCenter, 
+.informacao_inferior {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.fantasma{
+    visibility: hidden;
+}
+
+.informacao_inferior{
+    margin-top: 17px;
+    text-transform: capitalize;
+}
+
 
 .imagemmodal {
     display: block;

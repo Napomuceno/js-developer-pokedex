@@ -62,18 +62,11 @@ pokemonList.addEventListener('click', (event) => {
     const clickedPokemon = event.target.closest('.pokemon');
     if (clickedPokemon) {
         const pokemonNumber = clickedPokemon.querySelector('.number').textContent.slice(1);
-        const pokemonName = clickedPokemon.querySelector('.name').textContent;
-        const pokemonType = clickedPokemon.querySelector('.type').textContent;
-        const pokemonImage = clickedPokemon.querySelector('img').getAttribute('src');
-
-        const pokemon = {
-            number: pokemonNumber,
-            name: pokemonName,
-            type: pokemonType,
-            photo: pokemonImage,
-        };
-
-        openModal(pokemon);
+        pokeApi.getPokemonunico(pokemonNumber).then((response)=>{
+            openModal(response);
+        })
+        
+      
     }   
 });
 
@@ -85,32 +78,66 @@ function openModal(pokemon){
     </ol>
     ` : '';
 
+
     const PokemonmodalContent = `
-      <div class="modalcabecalho ${pokemon.type}">
-        <button class="close-button" onclick="fecharModal()"></button>
-        <h1 Class="modalnome">${pokemon.name}</h1>
-        
-        <span class="modalNum">#${pokemon.number}</span>
-        <div>
-            <span class="pokemon ${pokemon.type}">typesHtml</span>
-        </div>
+        <div class="modalcabecalho ${pokemon.type}">
+            <button class="close-button" onclick="fecharModal()"></button>
+            <h1 Class="modalnome">${pokemon.name}</h1>
+            <span class="modalNum">#${pokemon.number}</span>
+            <div>
+                <span class="pokemon ${pokemon.type}">${pokemon.type}</span>
+            </div>
+            <img class="imagemmodal" src="${pokemon.photo}" alt="${pokemon.name}">
+       </div>
+        <div class="modalcorpo">
+            <div class="corpoCabecalho">
+                <span> About </span>
+            </div>
+            <div class="bodycorpo">
+                <div class="bodycorpocabecalho"> 
+                    <div class="BccColunaEsquerda" >
+                        <span class="bbdescricao"> Species </span> 
+                        <span class="bbdescricao"> Height </span> 
+                        <span class="bbdescricao"> weight </span> 
+                        <span class="bbdescricao"> Abilities </span> 
+                    </div>
+                    <div class="BccColunaCentro" >
+                        <span id="pokemonInfo" Class="ccinfPokemon"> ${pokemon.specie} </span> 
+                        <span id="pokemonInfo" Class="ccinfPokemon"> ${pokemon.altura} </span> 
+                        <span id="pokemonInfo" Class="ccinfPokemon"> ${pokemon.largura} </span> 
+                        <span id="pokemonInfo" Class="ccinfPokemon"> ${pokemon.abilidades} </span> 
+                
+                    </div>
+                    <div class="BccColunaDireita" ></div>
+                </div>
+                
+               
+            
+            </div>
 
-        <img class="imagemmodal" src="${pokemon.photo}" alt="${pokemon.name}">
-       
-      </div>
-      <div class="modalcorpo">
-        <div class="corpoCabecalho">
-            <span>abount</span>
+            <div class="rodapeinferior"> 
+                
+                <div class="inferiorolunaEsquerda" >
+                    <div>
+                        <span class="rodapeinferior_Titulo"> Breending </span>
+                    </div>
+                    <span class="descricao_inferior"> Gender </span>
+                    <span class="descricao_inferior"> Egg Groups </span>
+                    <span class="descricao_inferior"> Egg Cycle </span>
+                </div> 
+                <div class="inferiorColunaCenter" >
+                    <div class="fantasma">
+                        <span class="rodapeinferior_Titulo">Breending </span>
+                    </div>
+                    <span class="informacao_inferior"> ${pokemon.genero} </span>
+                    <span class="informacao_inferior"> ${pokemon.egg_groups[0]} </span>
+                    <span class="informacao_inferior">  ${pokemon.egg_groups[1]} </span>
+                
+                </div> 
+                <div class="inferiorColunaDireitar" ></div>
+            </div>    
         </div>
-
-        <div class="bodycorpo">
-          
-
-        </div>
-      </div>
       
-      <div>rodape</div>
-
     `;
 
     PokemonModal.innerHTML = PokemonmodalContent;
